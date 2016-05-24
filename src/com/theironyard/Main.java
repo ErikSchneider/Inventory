@@ -46,10 +46,10 @@ public class Main {
         System.out.println("Do you want to add or remove?");
         String addOrSubtract = scanner.nextLine();
         System.out.println("How much?");
-        int quantity = Integer.valueOf(scanner.nextLine());
-
-
-        //items.get(itemNumber - 1).quantity ++;
+        int adjustedAmount = Integer.valueOf(scanner.nextLine());
+        if (addOrSubtract.equals("subtract")) {
+            items.get(itemNumber - 1).quantity - adjustedAmount;
+        }
 
     }
 
