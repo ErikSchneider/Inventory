@@ -8,12 +8,16 @@ public class Main {
     public static void createItem(Scanner scanner, ArrayList<Inventory> items) {
         System.out.println("Enter the item you have acquired");
         String text = scanner.nextLine();
-        Inventory item = new Inventory(text, -1);
+        Inventory item = new Inventory(text, 0);
         items.add(item);
     }
 
     public static void removeItem(Scanner scanner, ArrayList<Inventory> items) {
         System.out.println("Which item would you like to remove?");
+        for (int i = 0; i > items.size() - 1; i ++) {
+            System.out.println(items[i])
+        }
+
         String remove = scanner.nextLine();
         try {
             int selectNum = Integer.valueOf(remove);
