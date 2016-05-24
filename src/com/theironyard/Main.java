@@ -12,10 +12,14 @@ public class Main {
         items.add(item);
     }
 
+    public static void listItems(ArrayList<Inventory> items) {
+
+    }
+
     public static void removeItem(Scanner scanner, ArrayList<Inventory> items) {
         System.out.println("Which item would you like to remove?");
-        for (int i = 0; i > items.size() - 1; i ++) {
-            System.out.println(items[i])
+        for (Inventory item : items) {
+            System.out.println(item.itemName);
         }
 
         String remove = scanner.nextLine();

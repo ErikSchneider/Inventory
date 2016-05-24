@@ -4,11 +4,11 @@ package com.theironyard;
  * Created by Erik on 5/23/16.
  */
 public class Inventory {
-    String item;
+    String itemName;
     int quantity;
 
-    public Inventory(String item, int quantity) {
-        this.item = item;
+    public Inventory(String itemName, int quantity) {
+        this.itemName = itemName;
         this.quantity = quantity;
     }
 }
