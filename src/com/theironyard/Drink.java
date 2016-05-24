@@ -6,7 +6,6 @@ package com.theironyard;
 public class Drink extends Inventory {
 
     public Drink(String itemName, int quantity) {
-        super(itemName, quantity);
         this.itemName = itemName;
         this.quantity = quantity;
         this.category = "Drink";

@@ -5,19 +5,50 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void createItem(Scanner scanner, ArrayList<Inventory> items) {
+    public static void createItem (Scanner scanner, ArrayList<Inventory> items ) {
         System.out.println("Enter the item you have acquired");
         String itemName = scanner.nextLine();
-        Inventory item = new Inventory(itemName, 1);
-        items.add(item);
+        System.out.println("What type of item is this?");
+        String category = scanner.nextLine();
+        Inventory inventory = null;
+
+        switch(category) {
+            case "Food":
+                inventory = new Food(itemName, 1);
+                break;
+            case "Drink":
+                inventory = new Drink(itemName, 1);
+                break;
+            case "Armor":
+                inventory = new Armor(itemName, 1);
+                break;
+            case "Weapon":
+                inventory = new Weapon(itemName, 1);
+                break;
+            case "Resource":
+                inventory = new Resource(itemName, 1);
+                break;
+            default:
+                System.out.println("Invalid item type.");
+
+        }
+
+        items.add(inventory);
+
+
+//    public static void createItem(Scanner scanner, ArrayList<Inventory> items) {
+//        System.out.println("Enter the item you have acquired");
+//        String itemName = scanner.nextLine();
+//        Inventory item = new Inventory(itemName, 1);
+//        items.add(item);
     }
 
     public static void listItems(ArrayList<Inventory> items) {
-        int inventoryNumber = 1;
+//        int inventoryNumber = 1;
         for (int i = 0; i < items.size(); i ++) {
             Inventory object = items.get(i);
-            //System.out.println(inventoryNumber + ". " + object.itemName + " " + "[" + object.quantity + "]" + "\n");
-            System.out.printf("%s. %s [%s] \n\n", i + 1, object.itemName, object.quantity);
+//            System.out.println(inventoryNumber + ". " + object.itemName + " " + "[" + object.quantity + "]" + "\n");
+            System.out.printf("%s. %s [%s] - %s \n\n", i + 1, object.itemName, object.quantity, object.category);
 
         }
 //        for (Inventory object : items) {
