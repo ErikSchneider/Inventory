@@ -14,10 +14,14 @@ public class Main {
 
     public static void listItems(ArrayList<Inventory> items) {
         int inventoryNumber = 1;
-        for (Inventory object : items) {
+        for (int i = 0; i < items.size(); i ++); {
+            Inventory object = items.get(i);
             System.out.println(inventoryNumber + ". " + object.itemName + " " + object.quantity + "\n");
-            inventoryNumber ++;
         }
+//        for (Inventory object : items) {
+//            System.out.println(inventoryNumber + ". " + object.itemName + " " + object.quantity + "\n");
+//            inventoryNumber ++;
+//        }
 
     }
 
