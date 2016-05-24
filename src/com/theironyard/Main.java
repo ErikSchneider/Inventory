@@ -13,14 +13,15 @@ public class Main {
     }
 
     public static void listItems(ArrayList<Inventory> items) {
+        for (Inventory object : items) {
+            System.out.println(object.itemName + " " + object.quantity + "/n");
+        }
 
     }
 
     public static void removeItem(Scanner scanner, ArrayList<Inventory> items) {
         System.out.println("Which item would you like to remove?");
-        for (Inventory item : items) {
-            System.out.println(item.itemName);
-        }
+        listItems(items);
 
         String remove = scanner.nextLine();
         try {
