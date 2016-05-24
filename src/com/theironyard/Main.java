@@ -12,20 +12,20 @@ public class Main {
         String category = scanner.nextLine();
         Inventory inventory;
 
-        switch(category) {
-            case "Food":
+        switch(category.toLowerCase()) {
+            case "food":
                 inventory = new Food(itemName, 1);
                 break;
-            case "Drink":
+            case "drink":
                 inventory = new Drink(itemName, 1);
                 break;
-            case "Armor":
+            case "armor":
                 inventory = new Armor(itemName, 1);
                 break;
-            case "Weapon":
+            case "weapon":
                 inventory = new Weapon(itemName, 1);
                 break;
-            case "Resource":
+            case "resource":
                 inventory = new Resource(itemName, 1);
                 break;
             default:
