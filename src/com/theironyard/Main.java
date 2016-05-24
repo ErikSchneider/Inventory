@@ -39,17 +39,24 @@ public class Main {
         }
     }
 
-    public static void updateQuantiity(Scanner scanner, ArrayList<Inventory> items) {
+    public static void updateQuantity(Scanner scanner, ArrayList<Inventory> items) {
         System.out.println("Which item would you like to adjust the quantity of?");
         listItems(items);
         int itemNumber = Integer.valueOf(scanner.nextLine());
-        System.out.println("Do you want to add or remove?");
+        System.out.println("Do you want to add or subtract?");
         String addOrSubtract = scanner.nextLine();
         System.out.println("How much?");
         int adjustedAmount = Integer.valueOf(scanner.nextLine());
         if (addOrSubtract.equals("subtract")) {
-            items.get(itemNumber - 1).quantity - adjustedAmount;
+            items.get(itemNumber - 1).quantity -= adjustedAmount;
+            if (items.get(itemNumber - 1).quantity <= 0);
+            items.remove(itemNumber - 1);
         }
+
+        else if (addOrSubtract.equals("add")) {
+            items.get(itemNumber - 1).quantity += adjustedAmount;
+        }
+
 
     }
 
@@ -76,7 +83,7 @@ public class Main {
                     break;
 
                 case ("3"):
-                    updateQuantiity(scanner, items);
+                    updateQuantity(scanner, items);
                     break;
 
             }
