@@ -16,7 +16,9 @@ public class Main {
         int inventoryNumber = 1;
         for (int i = 0; i < items.size(); i ++) {
             Inventory object = items.get(i);
-            System.out.println(inventoryNumber + ". " + object.itemName + " " + "[" + object.quantity + "]" + "\n");
+            //System.out.println(inventoryNumber + ". " + object.itemName + " " + "[" + object.quantity + "]" + "\n");
+            System.out.printf("%s. %s [%s] \n\n", i + 1, object.itemName, object.quantity);
+
         }
 //        for (Inventory object : items) {
 //            System.out.println(inventoryNumber + ". " + object.itemName + " " + object.quantity + "\n");
