@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void createItem(Scanner scanner, ArrayList<Inventory> items) {
+        listItems(items);
         System.out.println("Enter the item you have acquired");
         String text = scanner.nextLine();
         Inventory item = new Inventory(text, 0);
@@ -13,13 +14,16 @@ public class Main {
     }
 
     public static void listItems(ArrayList<Inventory> items) {
+        int inventoryNumber = 1;
         for (Inventory object : items) {
-            System.out.println(object.itemName + " " + object.quantity + "\n");
+            System.out.println(inventoryNumber + ". " + object.itemName + " " + object.quantity + "\n");
+            inventoryNumber ++;
         }
 
     }
 
     public static void removeItem(Scanner scanner, ArrayList<Inventory> items) {
+        listItems(items);
         System.out.println("Which item would you like to remove?");
         listItems(items);
 
@@ -38,6 +42,7 @@ public class Main {
     }
 
     public static void updateQuantiity(Scanner scanner, ArrayList<Inventory> items) {
+        listItems(items);
         System.out.println("Which item would you like to adjust the quantity of?");
 
     }
