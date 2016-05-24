@@ -14,7 +14,7 @@ public class Main {
 
     public static void listItems(ArrayList<Inventory> items) {
         for (Inventory object : items) {
-            System.out.println(object.itemName + " " + object.quantity + "/n");
+            System.out.println(object.itemName + " " + object.quantity + "\n");
         }
 
     }
