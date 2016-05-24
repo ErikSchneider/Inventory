@@ -10,7 +10,7 @@ public class Main {
         String itemName = scanner.nextLine();
         System.out.println("What type of item is this?");
         String category = scanner.nextLine();
-        Inventory inventory = null;
+        Inventory inventory;
 
         switch(category) {
             case "Food":
@@ -29,11 +29,15 @@ public class Main {
                 inventory = new Resource(itemName, 1);
                 break;
             default:
-                System.out.println("Invalid item type.");
+                inventory = null;
+                System.out.println("Invalid item type!!!");
 
         }
+        if (inventory != null) {
+            items.add(inventory);
+        }
 
-        items.add(inventory);
+
 
 
 //    public static void createItem(Scanner scanner, ArrayList<Inventory> items) {
