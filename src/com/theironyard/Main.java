@@ -6,10 +6,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void createItem(Scanner scanner, ArrayList<Inventory> items) {
-        listItems(items);
         System.out.println("Enter the item you have acquired");
-        String text = scanner.nextLine();
-        Inventory item = new Inventory(text, 0);
+        String itemName = scanner.nextLine();
+        Inventory item = new Inventory(itemName, 1);
         items.add(item);
     }
 
@@ -23,7 +22,6 @@ public class Main {
     }
 
     public static void removeItem(Scanner scanner, ArrayList<Inventory> items) {
-        listItems(items);
         System.out.println("Which item would you like to remove?");
         listItems(items);
 
@@ -42,8 +40,16 @@ public class Main {
     }
 
     public static void updateQuantiity(Scanner scanner, ArrayList<Inventory> items) {
-        listItems(items);
         System.out.println("Which item would you like to adjust the quantity of?");
+        listItems(items);
+        int itemNumber = Integer.valueOf(scanner.nextLine());
+        System.out.println("Do you want to add or remove?");
+        String addOrSubtract = scanner.nextLine();
+        System.out.println("How much?");
+        int quantity = Integer.valueOf(scanner.nextLine());
+
+
+        //items.get(itemNumber - 1).quantity ++;
 
     }
 
@@ -52,6 +58,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
+            listItems(items);
             System.out.println("1. Create new item");
             System.out.println("2. Remove item");
             System.out.println("3. Update quantity");
